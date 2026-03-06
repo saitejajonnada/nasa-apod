@@ -8,18 +8,29 @@
 </head>
 <body>
   <main class="page">
-    <h1>NASA Astronomy Picture of the Day</h1>
+    <header class="hero">
+      <p class="kicker">NASA Open API</p>
+      <h1>Astronomy Picture of the Day</h1>
+      <p class="subtitle">Search any date from June 16, 1995 to today.</p>
+    </header>
 
-    <form id="search-form">
+    <form id="search-form" class="controls">
       <label for="search-input">Select Date</label>
-      <input id="search-input" type="date" required />
-      <button type="submit">Search</button>
+      <div class="control-row">
+        <input id="search-input" type="date" required />
+        <button type="submit">Search</button>
+        <button type="button" id="refresh-today">Refresh Today</button>
+      </div>
+      <p id="status-text" class="status" aria-live="polite"></p>
     </form>
 
-    <section id="current-image-container" aria-live="polite"></section>
+    <section id="current-image-container" class="media-card" aria-live="polite"></section>
 
-    <section class="history-wrapper">
-      <h2>Past Searches</h2>
+    <section class="history-wrapper" aria-label="Past Searches">
+      <div class="history-head">
+        <h2>Past Searches</h2>
+        <button type="button" id="clear-history" class="ghost-btn">Clear</button>
+      </div>
       <ul id="search-history"></ul>
     </section>
   </main>
