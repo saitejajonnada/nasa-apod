@@ -1,0 +1,137 @@
+﻿:root {
+  --bg: #0b0f14;
+  --surface: #121922;
+  --text: #f4f7fb;
+  --muted: #9aa7b8;
+  --accent: #1e90ff;
+  --accent-hover: #0e73d8;
+  --border: #253343;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #1a2b3d 0%, var(--bg) 45%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#search-form label {
+  width: 100%;
+  font-weight: 600;
+}
+
+#search-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0d141d;
+  color: var(--text);
+}
+
+#search-form button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#search-form button:hover {
+  background: var(--accent-hover);
+}
+
+#current-image-container {
+  margin-top: 18px;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-height: 280px;
+  padding: 16px;
+}
+
+#current-image-container img,
+#current-image-container iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+#current-image-container h3 {
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+#current-image-container p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.history-wrapper {
+  margin-top: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#search-history {
+  margin: 0;
+  padding-left: 18px;
+}
+
+#search-history li {
+  margin: 8px 0;
+  cursor: pointer;
+  color: #9eceff;
+}
+
+#search-history li:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff9393;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  #search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-form button {
+    width: 100%;
+  }
+}
